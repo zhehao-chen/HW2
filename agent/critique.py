@@ -40,10 +40,99 @@ Keep your prompts in prompts/.
 
 from __future__ import annotations
 
+import json
+from pathlib import Path
+
+from harness.formats import LABELS, parse_triage_comment
+from harness.trace import read_trace
+
+ROOT = Path(__file__).resolve().parent.parent
+CRITIC_PROMPT = "prompts/critic.md"
+RESULT_LIMIT = 4000          # the most characters of each step's result the model is shown (a file can be long)
+
+# The verdict comes back through a tool. Its "decision" enum holds "accept", which is how the checker's scripted models recognise a self critique
+VERDICT_TOOL = {
+    "name": "submit_verdict",
+    "description": "Accept the draft comment, or ask for it to be revised and say why.",
+    "input_schema": {
+        "type": "object",
+        "properties": {
+            "decision": {"type": "string", "enum": ["accept", "revise"]},
+            "reason": {"type": ["string", "null"]},
+        },
+        "required": ["decision", "reason"],
+        "additionalProperties": False,
+    },
+    "strict": True,
+}
+
 
 def verify(draft: str, ctx) -> dict:
-    raise NotImplementedError("Assignment 2 Part D: the external checks")
+    reasons = []
+    label, file = parse_triage_comment(draft)        # e.g. ("bug", "src/a.ts"); a missing line is None
+
+    # 1. Parses: a known label, and a file line
+    if label not in LABELS or file is None:
+        reasons.append("the draft does not parse: its first two lines must be "
+                       "'label: <bug | feature | question | docs>' and 'file: <path or none>'")
+        return {"passed": False, "reasons": reasons}  # unparsable: the other three checks cannot run
+
+    if file != "none":
+        # 2. Exists
+        repo_path = ctx.root / "fixtures" / "repo" / file
+        if not repo_path.is_file():
+            reasons.append(f"the file {file} does not exist in the repository")
+
+        # 3. Seen: some tool_call line of this run has it in its paths (a search returned it, or a step read it)
+        seen = set()
+        for record in read_trace(ctx.trace.path):
+            if record.get("type") == "tool_call":
+                for path in record.get("paths") or []:
+                    seen.add(path)
+        if file not in seen:
+            reasons.append(f"this run never saw {file}: no search returned it and no step read it")
+
+    # 4. Agrees: a question names none, and every other label names a file
+    if label == "question" and file != "none":
+        reasons.append(f"a question names no file, but the draft names {file}")
+    if label != "question" and file == "none":
+        reasons.append(f"a {label} must name the file to change, but the draft names none")
+
+    return {"passed": len(reasons) == 0, "reasons": reasons}
 
 
-def self_critique(client, draft: str, evidence: dict, trace=None) -> dict:
-    raise NotImplementedError("Assignment 2 Part D: the self critique")
+def self_critique(client, draft: str, evidence: dict, trace=None, step: int = 0) -> dict:
+    """evidence: {"issue": the issue's text, "steps": [{"tool", "args", "result"}, ...]},
+    which is what the model that wrote the draft could see, and nothing new."""
+    system = (ROOT / CRITIC_PROMPT).read_text()
+
+    step_lines = []
+    for item in evidence.get("steps", []):
+        result = str(item.get("result", ""))
+        if len(result) > RESULT_LIMIT:
+            result = result[:RESULT_LIMIT] + "\n... (cut)"
+        step_lines.append(f"{item.get('tool')} {json.dumps(item.get('args', {}))}:\n{result}")
+
+    message = (
+        "The issue:\n" + str(evidence.get("issue", "")) + "\n\n"
+        "What the run found:\n" + "\n\n".join(step_lines) + "\n\n"
+        "The draft comment:\n" + draft
+    )
+
+    response = client.create(system=system,
+                             messages=[{"role": "user", "content": message}],
+                             tools=[VERDICT_TOOL])
+    if trace is not None:
+        trace.model_call(step, response, purpose="critique")
+
+    for call in response.tool_calls:
+        if call.name == "submit_verdict":
+            decision = call.input.get("decision")
+            reason = call.input.get("reason")
+            if decision == "accept":
+                return {"decision": "accept", "reason": None}
+            if decision == "revise":
+                return {"decision": "revise", "reason": reason or "the critic asked for a revision"}
+
+    # No verdict: accept, rather than rewrite a draft that may be right on the strength of a check that did not answer
+    return {"decision": "accept", "reason": None}

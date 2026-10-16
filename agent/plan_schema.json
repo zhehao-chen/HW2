@@ -1,0 +1,24 @@
+{
+  "type": "object",
+  "properties": {
+    "steps": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id":              { "type": "integer" },
+          "action":          { "type": "string" },
+          "tool":            { "type": "string" },
+          "args_json":       { "type": "string" },
+          "depends_on":      { "type": "array", "items": { "type": "integer" } },
+          "expected_result": { "type": "string" },
+          "status":          { "type": "string", "enum": [ "pending", "done", "failed" ] }
+        },
+        "required": [ "id", "action", "tool", "args_json", "depends_on", "expected_result", "status" ],
+        "additionalProperties": false
+      }
+    }
+  },
+  "required": [ "steps" ],
+  "additionalProperties": false
+}

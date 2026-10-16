@@ -1,0 +1,20 @@
+{
+  "about": "What this run has already done, not what is left to do: steps_done lists the plan steps that have run, in order; paths lists every file a search returned or a step read, in order. A path here has been seen.",
+  "steps_done": [
+    1,
+    2,
+    2,
+    2,
+    3,
+    4
+  ],
+  "paths": [
+    "src/api/auth.ts",
+    "src/api/errors.ts",
+    "src/api/reports.ts",
+    "src/api/uploads.ts",
+    "src/api/users.ts",
+    "src/components/DateRangePicker.tsx",
+    "src/components/ExportButton.tsx"
+  ]
+}

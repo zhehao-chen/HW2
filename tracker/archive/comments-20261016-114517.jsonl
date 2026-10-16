@@ -1,0 +1,35 @@
+{"id": 1, "run_id": "planned-4191-s01-3c29e7", "issue": 4191, "body": "label: bug\nfile: src/ingest/dedupe.ts", "posted_at": "2026-10-14T23:30:44"}
+{"id": 2, "run_id": "planned-4191-s01-134302", "issue": 4191, "body": "label: bug\nfile: src/ingest/dedupe.ts", "posted_at": "2026-10-14T23:32:36"}
+{"id": 3, "run_id": "planned-4191-s01-92b747", "issue": 4191, "body": "label: bug\nfile: $fill", "posted_at": "2026-10-14T23:35:13"}
+{"id": 4, "run_id": "planned-4191-s01-8f719e", "issue": 4191, "body": "label: bug\nfile: src/ingest/dedupe.ts", "posted_at": "2026-10-14T23:37:30"}
+{"id": 5, "run_id": "planned-4191-s01-a9c8e5", "issue": 4191, "body": "label: question\nfile: none\nIt seems that 'npm run serve' is mentioned in the README, but the script doesn't exist.", "posted_at": "2026-10-14T23:39:28"}
+{"id": 6, "run_id": "planned-4191-s01-147c79", "issue": 4191, "body": "label: bug\nfile: src/ingest/dedupe.ts", "posted_at": "2026-10-15T20:44:37"}
+{"id": 7, "run_id": "planned-4191-s01-910ce7", "issue": 4191, "body": "label: bug\nfile: src/ingest/dedupe.ts", "posted_at": "2026-10-15T20:44:37"}
+{"id": 8, "run_id": "planned-4191-s01-153a13", "issue": 4191, "body": "label: bug\nfile: src/ingest/dedupe.ts", "posted_at": "2026-10-15T20:44:55"}
+{"id": 9, "run_id": "planned-4191-s01-fb5793", "issue": 4191, "body": "label: question\nfile: none\nThe README mentions running 'npm run serve', but this script does not exist, leading to confusion about the correct command.", "posted_at": "2026-10-15T21:00:23"}
+{"id": 10, "run_id": "planned-4191-s01-f1655a", "issue": 4191, "body": "label: bug\nfile: src/ingest/dedupe.ts", "posted_at": "2026-10-15T21:03:14"}
+{"id": 11, "run_id": "planned-4191-s01-291ad9", "issue": 4191, "body": "label: question\nfile: none\nThe README mentions 'npm run serve', but it appears that script does not exist.", "posted_at": "2026-10-15T21:03:44"}
+{"id": 12, "run_id": "planned-4192-s01-01311a", "issue": 4192, "body": "label: bug\nfile: src/components/export/ExportButton.tsx\nThe Export button remains disabled after a failed export, which is unexpected behavior.", "posted_at": "2026-10-15T21:03:48"}
+{"id": 13, "run_id": "planned-4191-s01-4ad82c", "issue": 4191, "body": "label: bug\nfile: src/ingest/dedupe.ts", "posted_at": "2026-10-15T21:05:08"}
+{"id": 14, "run_id": "planned-4191-s01-e5fe85", "issue": 4191, "body": "label: question\nfile: README.md\nThe README mentions 'npm run serve', but it seems the script is missing.", "posted_at": "2026-10-15T21:05:46"}
+{"id": 15, "run_id": "planned-4191-s01-2a8a2b", "issue": 4191, "body": "label: bug\nfile: src/ingest/dedupe.ts", "posted_at": "2026-10-15T21:13:50"}
+{"id": 16, "run_id": "planned-4191-s01-0c544c", "issue": 4191, "body": "label: question\nfile: README.md\nThe README mentions using 'npm run serve', but it seems the script might be missing.", "posted_at": "2026-10-15T21:14:07"}
+{"id": 17, "run_id": "planned-4191-s01-d9147e", "issue": 4191, "body": "label: bug\nfile: src/ingest/dedupe.ts", "posted_at": "2026-10-15T21:15:40"}
+{"id": 18, "run_id": "planned-4191-s01-10b811", "issue": 4191, "body": "label: bug\nfile: src/ingest/dedupe.ts", "posted_at": "2026-10-15T21:15:40"}
+{"id": 19, "run_id": "planned-4191-s01-5b4c59", "issue": 4191, "body": "label: bug\nfile: src/ingest/dedupe.ts", "posted_at": "2026-10-15T21:15:51"}
+{"id": 20, "run_id": "planned-4191-s01-c8b41a", "issue": 4191, "body": "label: question\nfile: README.md\nThe README mentions 'npm run serve' but the script seems to be missing.", "posted_at": "2026-10-15T21:16:46"}
+{"id": 21, "run_id": "planned-4192-s01-453942", "issue": 4192, "body": "label: bug\nfile: README.md\nThe Export button should enable after an export fails but remains greyed out.", "posted_at": "2026-10-15T21:16:46"}
+{"id": 22, "run_id": "planned-4192-s01-0be466", "issue": 4192, "body": "label: bug\nfile: src/ingest/dedupe.ts", "posted_at": "2026-10-15T22:00:31"}
+{"id": 23, "run_id": "planned-4192-s01-b539d8", "issue": 4192, "body": "label: bug\nfile: src/export/tsv.ts", "posted_at": "2026-10-15T22:00:31"}
+{"id": 24, "run_id": "planned-4192-s01-bd7221", "issue": 4192, "body": "label: bug\nfile: src/ingest/dedupe.ts", "posted_at": "2026-10-15T22:00:31"}
+{"id": 25, "run_id": "planned-4191-s01-23a610", "issue": 4191, "body": "label: bug\nfile: src/ingest/dedupe.ts", "posted_at": "2026-10-15T22:00:38"}
+{"id": 26, "run_id": "planned-4191-s01-f6bc4f", "issue": 4191, "body": "label: docs\nfile: README.md\nThe README mentions the npm run serve command, but it's unclear if it was intended to work on its own.", "posted_at": "2026-10-15T22:04:54"}
+{"id": 27, "run_id": "planned-4192-s01-a165ab", "issue": 4192, "body": "label: bug\nfile: docs/API.md\nThe Export button remains greyed out after a failed export, indicating a potential issue with the error handling logic during export operations.", "posted_at": "2026-10-15T22:04:56"}
+{"id": 28, "run_id": "planned-4191-s01-43b36e", "issue": 4191, "body": "label: bug  \nfile: README.md  \nThe README mentions npm run serve, but it appears that the script doesn't exist in the package. Please investigate this issue.", "posted_at": "2026-10-15T22:05:05"}
+{"id": 29, "run_id": "planned-4192-s01-6bd1c3", "issue": 4192, "body": "label: bug\nfile: src/components/ExportButton.tsx\nThe Export button stays greyed out after a failed export, indicating a potential issue in the export handling logic.", "posted_at": "2026-10-15T22:05:06"}
+{"id": 30, "run_id": "planned-4191-s01-f85864", "issue": 4191, "body": "label: bug\nfile: src/ingest/dedupe.ts", "posted_at": "2026-10-15T22:48:01"}
+{"id": 31, "run_id": "notes-4191-s01-301312", "issue": 4191, "body": "label: bug\nfile: src/ingest/dedupe.ts", "posted_at": "2026-10-16T00:04:42"}
+{"id": 32, "run_id": "notes-4191-s01-87349a", "issue": 4191, "body": "label: bug\nfile: src/ingest/dedupe.ts", "posted_at": "2026-10-16T00:20:25"}
+{"id": 33, "run_id": "notes-4191-s01-3d20ae", "issue": 4191, "body": "label: bug\nfile: src/ingest/dedupe.ts", "posted_at": "2026-10-16T00:20:25"}
+{"id": 34, "run_id": "notes-4191-s01-979883", "issue": 4191, "body": "label: bug\nfile: src/ingest/dedupe.ts", "posted_at": "2026-10-16T11:30:30"}
+{"id": 35, "run_id": "notes-4191-s01-a34428", "issue": 4191, "body": "label: bug\nfile: src/ingest/dedupe.ts", "posted_at": "2026-10-16T11:30:30"}

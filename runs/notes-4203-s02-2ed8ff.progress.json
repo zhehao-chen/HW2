@@ -1,0 +1,16 @@
+{
+  "about": "What this run has already done, not what is left to do: steps_done lists the plan steps that have run, in order; paths lists every file a search returned or a step read, in order. A path here has been seen.",
+  "steps_done": [
+    1,
+    2,
+    2,
+    3,
+    4
+  ],
+  "paths": [
+    "src/i18n/en.json",
+    "src/i18n/fr.json",
+    "src/ingest/errors.ts",
+    "src/ingest/parser.ts"
+  ]
+}

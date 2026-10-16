@@ -67,4 +67,4 @@ def run_loop(client, tools, system: str, user_message: str, bounds: Bounds, trac
                 return last_text
             trace.tool_call(step, call, result)
             results.append(tool_result(call, result.content, result.is_error))
-        messages.append({"role": "user", "content": results})
+        messages.append({"role": "user", "content": results}) # type: ignore

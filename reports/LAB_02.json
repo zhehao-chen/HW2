@@ -1,89 +1,128 @@
 {
   "lab": "02",
   "schema": {
-    "args_representation": null,
-    "optional_fields": null,
-    "union_types": null,
-    "strict_compiles": null
+    "args_representation": "args_json",
+    "optional_fields": 0,
+    "union_types": 0,
+    "strict_compiles": true
   },
   "fixture_validation": [
     {
       "plan": "good_export_fix.json",
-      "valid": null,
-      "failures": null
+      "valid": true,
+      "failures": []
     },
     {
       "plan": "good_triage.json",
-      "valid": null,
-      "failures": null
+      "valid": true,
+      "failures": []
     },
     {
       "plan": "s18_specimen.json",
-      "valid": null,
-      "failures": null
+      "valid": false,
+      "failures": [
+        {
+          "step": 2,
+          "check": 2
+        },
+        {
+          "step": 3,
+          "check": 3
+        },
+        {
+          "step": 5,
+          "check": 1
+        }
+      ]
     }
   ],
   "ladder": {
     "looping": {
       "q1": {
-        "fired": null,
-        "ids": []
+        "fired": true,
+        "ids": [
+          [
+            1,
+            3
+          ],
+          [
+            2,
+            4
+          ]
+        ]
       },
       "q2": {
-        "fired": null,
-        "ids": []
+        "fired": true,
+        "ids": [
+          1,
+          2
+        ]
       },
       "q3": {
-        "fired": null,
-        "ids": []
+        "fired": true,
+        "ids": [
+          3,
+          4,
+          5,
+          6
+        ]
       }
     },
     "s49": {
       "q1": {
-        "fired": null,
-        "ids": []
+        "fired": true,
+        "ids": [
+          [
+            2,
+            4
+          ]
+        ]
       },
       "q2": {
-        "fired": null,
+        "fired": false,
         "ids": []
       },
       "q3": {
-        "fired": null,
-        "ids": []
+        "fired": true,
+        "ids": [
+          6
+        ]
       }
     }
   },
   "diff_s49": {
     "steps": {
-      "1": null,
-      "2": null,
-      "3": null,
-      "4": null,
-      "5": null,
-      "6": null
+      "1": "executed",
+      "2": "executed",
+      "3": "executed",
+      "4": "executed",
+      "5": "executed",
+      "6": "skipped"
     },
-    "extra": []
+    "extra": [
+      4
+    ]
   },
   "results": {
     "agent": {
-      "runs": null,
-      "passes": null,
+      "runs": 18,
+      "passes": 8,
       "per_issue": {
-        "4201": null,
-        "4202": null,
-        "4203": null,
-        "4204": null,
-        "4205": null,
-        "4206": null
+        "4201": 2,
+        "4202": 0,
+        "4203": 3,
+        "4204": 0,
+        "4205": 3,
+        "4206": 0
       },
-      "sweep_min": null,
-      "sweep_max": null,
-      "mean_tokens": null,
-      "p50_latency_s": null,
-      "max_latency_s": null,
+      "sweep_min": 2,
+      "sweep_max": 3,
+      "mean_tokens": 8718.111111111111,
+      "p50_latency_s": 7.571,
+      "max_latency_s": 10.945,
       "plan_overhead_share": null,
       "critique_overhead_share": null,
-      "runs_with_repeat": null,
+      "runs_with_repeat": 2,
       "off_plan": null,
       "revisions_mean": null,
       "revisions_max": null,
@@ -95,27 +134,27 @@
       "drafts_held": null
     },
     "planned_off": {
-      "runs": null,
-      "passes": null,
+      "runs": 18,
+      "passes": 4,
       "per_issue": {
-        "4201": null,
-        "4202": null,
-        "4203": null,
-        "4204": null,
-        "4205": null,
-        "4206": null
+        "4201": 3,
+        "4202": 0,
+        "4203": 0,
+        "4204": 0,
+        "4205": 1,
+        "4206": 0
       },
-      "sweep_min": null,
-      "sweep_max": null,
-      "mean_tokens": null,
-      "p50_latency_s": null,
-      "max_latency_s": null,
-      "plan_overhead_share": null,
+      "sweep_min": 1,
+      "sweep_max": 2,
+      "mean_tokens": 6537.444444444444,
+      "p50_latency_s": 8.42,
+      "max_latency_s": 14.854,
+      "plan_overhead_share": 0.28011878114207345,
       "critique_overhead_share": null,
-      "runs_with_repeat": null,
-      "off_plan": null,
-      "revisions_mean": null,
-      "revisions_max": null,
+      "runs_with_repeat": 2,
+      "off_plan": 0,
+      "revisions_mean": 1.0,
+      "revisions_max": 3,
       "rounds_mean": null,
       "rounds_max": null,
       "drafts_changed": null,
@@ -124,63 +163,532 @@
       "drafts_held": null
     },
     "planned_self": {
-      "runs": null,
-      "passes": null,
+      "runs": 18,
+      "passes": 3,
       "per_issue": {
-        "4201": null,
-        "4202": null,
-        "4203": null,
-        "4204": null,
-        "4205": null,
-        "4206": null
+        "4201": 3,
+        "4202": 0,
+        "4203": 0,
+        "4204": 0,
+        "4205": 0,
+        "4206": 0
       },
-      "sweep_min": null,
-      "sweep_max": null,
-      "mean_tokens": null,
-      "p50_latency_s": null,
-      "max_latency_s": null,
-      "plan_overhead_share": null,
-      "critique_overhead_share": null,
-      "runs_with_repeat": null,
-      "off_plan": null,
-      "revisions_mean": null,
-      "revisions_max": null,
-      "rounds_mean": null,
-      "rounds_max": null,
-      "drafts_changed": null,
-      "drafts_fixed": null,
-      "drafts_broken": null,
-      "drafts_held": null
+      "sweep_min": 1,
+      "sweep_max": 1,
+      "mean_tokens": 9454.555555555555,
+      "p50_latency_s": 9.517,
+      "max_latency_s": 18.964,
+      "plan_overhead_share": 0.19090968200840852,
+      "critique_overhead_share": 0.32383294447775074,
+      "runs_with_repeat": 0,
+      "off_plan": 0,
+      "revisions_mean": 0.7222222222222222,
+      "revisions_max": 3,
+      "rounds_mean": 1.3888888888888888,
+      "rounds_max": 2,
+      "drafts_changed": 7,
+      "drafts_fixed": 0,
+      "drafts_broken": 0,
+      "drafts_held": 8
     },
     "planned_external": {
-      "runs": null,
-      "passes": null,
+      "runs": 18,
+      "passes": 6,
       "per_issue": {
-        "4201": null,
-        "4202": null,
-        "4203": null,
-        "4204": null,
-        "4205": null,
-        "4206": null
+        "4201": 3,
+        "4202": 0,
+        "4203": 0,
+        "4204": 0,
+        "4205": 3,
+        "4206": 0
       },
-      "sweep_min": null,
-      "sweep_max": null,
-      "mean_tokens": null,
-      "p50_latency_s": null,
-      "max_latency_s": null,
-      "plan_overhead_share": null,
-      "critique_overhead_share": null,
-      "runs_with_repeat": null,
-      "off_plan": null,
-      "revisions_mean": null,
-      "revisions_max": null,
-      "rounds_mean": null,
-      "rounds_max": null,
-      "drafts_changed": null,
-      "drafts_fixed": null,
-      "drafts_broken": null,
-      "drafts_held": null
+      "sweep_min": 2,
+      "sweep_max": 2,
+      "mean_tokens": 7109.333333333333,
+      "p50_latency_s": 7.635,
+      "max_latency_s": 13.606,
+      "plan_overhead_share": 0.26598235647613255,
+      "critique_overhead_share": 0.07090149320127324,
+      "runs_with_repeat": 0,
+      "off_plan": 0,
+      "revisions_mean": 0.8888888888888888,
+      "revisions_max": 3,
+      "rounds_mean": 1.2777777777777777,
+      "rounds_max": 2,
+      "drafts_changed": 6,
+      "drafts_fixed": 1,
+      "drafts_broken": 0,
+      "drafts_held": 0
     }
   },
-  "context": []
+  "context": [
+    {
+      "run_id": "notes-4203-s01-339d81",
+      "issue": 4203,
+      "notes_shown": false,
+      "compacted": true,
+      "questions": [
+        {
+          "path": "src/i18n/en.json",
+          "truth": "yes",
+          "answer": "no"
+        },
+        {
+          "path": ".eslintrc.json",
+          "truth": "yes",
+          "answer": "no"
+        },
+        {
+          "path": "CHANGELOG.md",
+          "truth": "yes",
+          "answer": "no"
+        },
+        {
+          "path": "src/util/money.ts",
+          "truth": "no",
+          "answer": "no"
+        },
+        {
+          "path": "src/util/pagination.ts",
+          "truth": "no",
+          "answer": "no"
+        },
+        {
+          "path": "src/util/retry.ts",
+          "truth": "no",
+          "answer": "no"
+        }
+      ],
+      "right": 3
+    },
+    {
+      "run_id": "notes-4203-s01-c23f8f",
+      "issue": 4203,
+      "notes_shown": true,
+      "compacted": true,
+      "questions": [
+        {
+          "path": "src/i18n/en.json",
+          "truth": "yes",
+          "answer": "yes"
+        },
+        {
+          "path": "src/i18n/fr.json",
+          "truth": "yes",
+          "answer": "yes"
+        },
+        {
+          "path": "src/ingest/errors.ts",
+          "truth": "yes",
+          "answer": "yes"
+        },
+        {
+          "path": "src/util/money.ts",
+          "truth": "no",
+          "answer": "no"
+        },
+        {
+          "path": "src/util/pagination.ts",
+          "truth": "no",
+          "answer": "no"
+        },
+        {
+          "path": "src/util/retry.ts",
+          "truth": "no",
+          "answer": "no"
+        }
+      ],
+      "right": 6
+    },
+    {
+      "run_id": "notes-4203-s02-2ed8ff",
+      "issue": 4203,
+      "notes_shown": true,
+      "compacted": true,
+      "questions": [
+        {
+          "path": "src/i18n/en.json",
+          "truth": "yes",
+          "answer": "yes"
+        },
+        {
+          "path": "src/i18n/fr.json",
+          "truth": "yes",
+          "answer": "yes"
+        },
+        {
+          "path": "src/ingest/errors.ts",
+          "truth": "yes",
+          "answer": "yes"
+        },
+        {
+          "path": "src/util/money.ts",
+          "truth": "no",
+          "answer": "no"
+        },
+        {
+          "path": "src/util/pagination.ts",
+          "truth": "no",
+          "answer": "no"
+        },
+        {
+          "path": "src/util/retry.ts",
+          "truth": "no",
+          "answer": "no"
+        }
+      ],
+      "right": 6
+    },
+    {
+      "run_id": "notes-4203-s02-ca5b06",
+      "issue": 4203,
+      "notes_shown": false,
+      "compacted": true,
+      "questions": [
+        {
+          "path": "src/i18n/en.json",
+          "truth": "yes",
+          "answer": "yes"
+        },
+        {
+          "path": "src/i18n/fr.json",
+          "truth": "yes",
+          "answer": "yes"
+        },
+        {
+          "path": "src/ingest/errors.ts",
+          "truth": "yes",
+          "answer": "no"
+        },
+        {
+          "path": "src/util/money.ts",
+          "truth": "no",
+          "answer": "no"
+        },
+        {
+          "path": "src/util/pagination.ts",
+          "truth": "no",
+          "answer": "no"
+        },
+        {
+          "path": "src/util/retry.ts",
+          "truth": "no",
+          "answer": "no"
+        }
+      ],
+      "right": 5
+    },
+    {
+      "run_id": "notes-4204-s01-314074",
+      "issue": 4204,
+      "notes_shown": true,
+      "compacted": true,
+      "questions": [
+        {
+          "path": "CHANGELOG.md",
+          "truth": "yes",
+          "answer": "yes"
+        },
+        {
+          "path": "docs/ARCHITECTURE.md",
+          "truth": "yes",
+          "answer": "yes"
+        },
+        {
+          "path": "src/notifications/rollup.ts",
+          "truth": "yes",
+          "answer": "yes"
+        },
+        {
+          "path": "src/util/money.ts",
+          "truth": "no",
+          "answer": "no"
+        },
+        {
+          "path": "src/util/pagination.ts",
+          "truth": "no",
+          "answer": "no"
+        },
+        {
+          "path": "src/util/retry.ts",
+          "truth": "no",
+          "answer": "no"
+        }
+      ],
+      "right": 6
+    },
+    {
+      "run_id": "notes-4204-s01-4b80e6",
+      "issue": 4204,
+      "notes_shown": false,
+      "compacted": true,
+      "questions": [
+        {
+          "path": "src/api/auth.ts",
+          "truth": "yes",
+          "answer": "no"
+        },
+        {
+          "path": "src/api/errors.ts",
+          "truth": "yes",
+          "answer": "no"
+        },
+        {
+          "path": "src/api/reports.ts",
+          "truth": "yes",
+          "answer": "yes"
+        },
+        {
+          "path": "src/util/money.ts",
+          "truth": "no",
+          "answer": "no"
+        },
+        {
+          "path": "src/util/pagination.ts",
+          "truth": "no",
+          "answer": "yes"
+        },
+        {
+          "path": "src/util/retry.ts",
+          "truth": "no",
+          "answer": "no"
+        }
+      ],
+      "right": 3
+    },
+    {
+      "run_id": "notes-4204-s02-b8b2b7",
+      "issue": 4204,
+      "notes_shown": false,
+      "compacted": true,
+      "questions": [
+        {
+          "path": "src/i18n/en.json",
+          "truth": "yes",
+          "answer": "yes"
+        },
+        {
+          "path": "CHANGELOG.md",
+          "truth": "yes",
+          "answer": "yes"
+        },
+        {
+          "path": "README.md",
+          "truth": "yes",
+          "answer": "yes"
+        },
+        {
+          "path": "src/util/money.ts",
+          "truth": "no",
+          "answer": "no"
+        },
+        {
+          "path": "src/util/pagination.ts",
+          "truth": "no",
+          "answer": "no"
+        },
+        {
+          "path": "src/util/retry.ts",
+          "truth": "no",
+          "answer": "no"
+        }
+      ],
+      "right": 6
+    },
+    {
+      "run_id": "notes-4204-s02-c2531d",
+      "issue": 4204,
+      "notes_shown": true,
+      "compacted": true,
+      "questions": [
+        {
+          "path": "CHANGELOG.md",
+          "truth": "yes",
+          "answer": "yes"
+        },
+        {
+          "path": "docs/ARCHITECTURE.md",
+          "truth": "yes",
+          "answer": "yes"
+        },
+        {
+          "path": "src/notifications/rollup.ts",
+          "truth": "yes",
+          "answer": "yes"
+        },
+        {
+          "path": "src/util/money.ts",
+          "truth": "no",
+          "answer": "no"
+        },
+        {
+          "path": "src/util/pagination.ts",
+          "truth": "no",
+          "answer": "no"
+        },
+        {
+          "path": "src/util/retry.ts",
+          "truth": "no",
+          "answer": "no"
+        }
+      ],
+      "right": 6
+    },
+    {
+      "run_id": "notes-4206-s01-0a46fd",
+      "issue": 4206,
+      "notes_shown": true,
+      "compacted": true,
+      "questions": [
+        {
+          "path": "CHANGELOG.md",
+          "truth": "yes",
+          "answer": "yes"
+        },
+        {
+          "path": "docs/API.md",
+          "truth": "yes",
+          "answer": "yes"
+        },
+        {
+          "path": "docs/ARCHITECTURE.md",
+          "truth": "yes",
+          "answer": "yes"
+        },
+        {
+          "path": "src/util/money.ts",
+          "truth": "no",
+          "answer": "no"
+        },
+        {
+          "path": "src/util/pagination.ts",
+          "truth": "no",
+          "answer": "no"
+        },
+        {
+          "path": "src/util/retry.ts",
+          "truth": "no",
+          "answer": "no"
+        }
+      ],
+      "right": 6
+    },
+    {
+      "run_id": "notes-4206-s01-88edb3",
+      "issue": 4206,
+      "notes_shown": false,
+      "compacted": true,
+      "questions": [
+        {
+          "path": "CHANGELOG.md",
+          "truth": "yes",
+          "answer": "yes"
+        },
+        {
+          "path": "docs/API.md",
+          "truth": "yes",
+          "answer": "no"
+        },
+        {
+          "path": "docs/ARCHITECTURE.md",
+          "truth": "yes",
+          "answer": "no"
+        },
+        {
+          "path": "src/util/money.ts",
+          "truth": "no",
+          "answer": "no"
+        },
+        {
+          "path": "src/util/pagination.ts",
+          "truth": "no",
+          "answer": "yes"
+        },
+        {
+          "path": "src/util/retry.ts",
+          "truth": "no",
+          "answer": "no"
+        }
+      ],
+      "right": 3
+    },
+    {
+      "run_id": "notes-4206-s02-2d8edd",
+      "issue": 4206,
+      "notes_shown": false,
+      "compacted": true,
+      "questions": [
+        {
+          "path": "CHANGELOG.md",
+          "truth": "yes",
+          "answer": "yes"
+        },
+        {
+          "path": "README.md",
+          "truth": "yes",
+          "answer": "yes"
+        },
+        {
+          "path": "docs/API.md",
+          "truth": "yes",
+          "answer": "no"
+        },
+        {
+          "path": "src/util/money.ts",
+          "truth": "no",
+          "answer": "no"
+        },
+        {
+          "path": "src/util/pagination.ts",
+          "truth": "no",
+          "answer": "yes"
+        },
+        {
+          "path": "src/util/retry.ts",
+          "truth": "no",
+          "answer": "no"
+        }
+      ],
+      "right": 4
+    },
+    {
+      "run_id": "notes-4206-s02-413322",
+      "issue": 4206,
+      "notes_shown": true,
+      "compacted": true,
+      "questions": [
+        {
+          "path": "CHANGELOG.md",
+          "truth": "yes",
+          "answer": "yes"
+        },
+        {
+          "path": "README.md",
+          "truth": "yes",
+          "answer": "yes"
+        },
+        {
+          "path": "docs/API.md",
+          "truth": "yes",
+          "answer": "yes"
+        },
+        {
+          "path": "src/util/money.ts",
+          "truth": "no",
+          "answer": "no"
+        },
+        {
+          "path": "src/util/pagination.ts",
+          "truth": "no",
+          "answer": "no"
+        },
+        {
+          "path": "src/util/retry.ts",
+          "truth": "no",
+          "answer": "no"
+        }
+      ],
+      "right": 6
+    }
+  ]
 }

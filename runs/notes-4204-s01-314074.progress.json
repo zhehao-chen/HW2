@@ -1,0 +1,17 @@
+{
+  "about": "What this run has already done, not what is left to do: steps_done lists the plan steps that have run, in order; paths lists every file a search returned or a step read, in order. A path here has been seen.",
+  "steps_done": [
+    1,
+    2,
+    2,
+    3,
+    4
+  ],
+  "paths": [
+    "CHANGELOG.md",
+    "docs/ARCHITECTURE.md",
+    "src/notifications/rollup.ts",
+    "src/util/dates.ts",
+    "test/dates.test.ts"
+  ]
+}
